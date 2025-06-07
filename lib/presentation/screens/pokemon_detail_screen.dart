@@ -5,6 +5,7 @@ import 'package:pokemon_app/data/models/pokemon_model.dart';
 import 'package:pokemon_app/core/theme/colors.dart';
 import 'package:pokemon_app/presentation/widgets/type_badge.dart';
 import 'package:pokemon_app/presentation/widgets/stat_bar.dart';
+import 'package:pokemon_app/core/utils/pokemon_type_colors.dart';
 
 class PokemonDetailScreen extends StatelessWidget {
   final Pokemon pokemon;
@@ -15,7 +16,9 @@ class PokemonDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: _getTypeColor(pokemon.type.first).withOpacity(0.8),
+      backgroundColor: PokemonTypeColor.getColor(
+        pokemon.type.first,
+      ).withOpacity(0.8),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -296,7 +299,9 @@ class PokemonDetailScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8.0),
             decoration: BoxDecoration(
-              color: _getTypeColor(pokemon.type.first).withOpacity(0.2),
+              color: PokemonTypeColor.getColor(
+                pokemon.type.first,
+              ).withOpacity(0.2),
               borderRadius: BorderRadius.circular(8.0),
             ),
             child: Column(
@@ -306,14 +311,14 @@ class PokemonDetailScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: _getTypeColor(pokemon.type.first),
+                    color: PokemonTypeColor.getColor(pokemon.type.first),
                   ),
                 ),
                 Text(
                   '#${pokemon.num}',
                   style: TextStyle(
                     fontSize: 14,
-                    color: _getTypeColor(pokemon.type.first),
+                    color: PokemonTypeColor.getColor(pokemon.type.first),
                   ),
                 ),
               ],
@@ -366,41 +371,6 @@ class PokemonDetailScreen extends StatelessWidget {
         children: evolutionWidgets,
       ),
     );
-  }
-
-  Color _getTypeColor(String type) {
-    switch (type.toLowerCase()) {
-      case 'grass':
-        return Colors.green;
-      case 'fire':
-        return Colors.redAccent;
-      case 'water':
-        return Colors.blue;
-      case 'electric':
-        return Colors.amber;
-      case 'rock':
-        return Colors.grey;
-      case 'ground':
-        return Colors.brown;
-      case 'psychic':
-        return Colors.indigo;
-      case 'fighting':
-        return Colors.orange;
-      case 'bug':
-        return Colors.lightGreen;
-      case 'ghost':
-        return Colors.deepPurple;
-      case 'normal':
-        return Colors.blueGrey;
-      case 'poison':
-        return Colors.deepPurpleAccent;
-      case 'ice':
-        return Colors.lightBlue;
-      case 'dragon':
-        return Colors.deepOrange;
-      default:
-        return Colors.grey;
-    }
   }
 
   void _sharePokemon(Pokemon pokemon) {
