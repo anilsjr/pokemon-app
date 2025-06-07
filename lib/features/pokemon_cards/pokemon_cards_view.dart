@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:pokemon_app/data/models/pokemon_model.dart';
 import 'package:pokemon_app/presentation/screens/pokemon_detail_screen.dart';
 import 'package:pokemon_app/core/theme/colors.dart';
+import 'package:pokemon_app/core/utils/pokemon_type_colors.dart';
 
 class PokemonCardsView extends StatefulWidget {
   final List<Pokemon> pokemonList;
@@ -107,7 +108,7 @@ class _PokemonCardsViewState extends State<PokemonCardsView> {
       child: Card(
         elevation: 8,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        color: _getCardColor(pokemon.type.first),
+        color: PokemonTypeColor.getColor(pokemon.type.first),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -238,40 +239,5 @@ class _PokemonCardsViewState extends State<PokemonCardsView> {
         ],
       ),
     );
-  }
-
-  Color _getCardColor(String type) {
-    switch (type.toLowerCase()) {
-      case 'grass':
-        return Colors.green;
-      case 'fire':
-        return Colors.redAccent;
-      case 'water':
-        return Colors.blue;
-      case 'electric':
-        return Colors.amber;
-      case 'rock':
-        return Colors.grey;
-      case 'ground':
-        return Colors.brown;
-      case 'psychic':
-        return Colors.indigo;
-      case 'fighting':
-        return Colors.orange;
-      case 'bug':
-        return Colors.lightGreen;
-      case 'ghost':
-        return Colors.deepPurple;
-      case 'normal':
-        return Colors.blueGrey;
-      case 'poison':
-        return Colors.deepPurpleAccent;
-      case 'ice':
-        return Colors.lightBlue;
-      case 'dragon':
-        return Colors.deepOrange;
-      default:
-        return Colors.grey;
-    }
   }
 }
