@@ -4,6 +4,7 @@ import 'package:pokemon_app/data/models/pokemon_model.dart';
 import 'package:pokemon_app/presentation/screens/pokemon_detail_screen.dart';
 import 'package:pokemon_app/core/theme/colors.dart';
 import 'package:pokemon_app/core/utils/responsive_utils.dart';
+import 'package:pokemon_app/core/utils/pokemon_type_colors.dart';
 
 class PokemonGridView extends StatelessWidget {
   final List<Pokemon> pokemonList;
@@ -135,7 +136,7 @@ class PokemonGridView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 0.0),
       constraints: const BoxConstraints(minWidth: 32.0),
       decoration: BoxDecoration(
-        color: _getTypeColor(type),
+        color: PokemonTypeColor.getColor(type),
         borderRadius: BorderRadius.circular(6.0),
       ),
       child: Text(
@@ -148,40 +149,5 @@ class PokemonGridView extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Color _getTypeColor(String type) {
-    switch (type.toLowerCase()) {
-      case 'grass':
-        return Colors.green;
-      case 'fire':
-        return Colors.redAccent;
-      case 'water':
-        return Colors.blue;
-      case 'electric':
-        return Colors.amber;
-      case 'rock':
-        return Colors.grey;
-      case 'ground':
-        return Colors.brown;
-      case 'psychic':
-        return Colors.indigo;
-      case 'fighting':
-        return Colors.orange;
-      case 'bug':
-        return Colors.lightGreen;
-      case 'ghost':
-        return Colors.deepPurple;
-      case 'normal':
-        return Colors.black54;
-      case 'poison':
-        return Colors.deepPurpleAccent;
-      case 'ice':
-        return Colors.lightBlue;
-      case 'dragon':
-        return Colors.deepOrange;
-      default:
-        return Colors.grey;
-    }
   }
 }
