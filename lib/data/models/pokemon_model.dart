@@ -54,18 +54,23 @@ class Pokemon {
       spawnChance: json['spawn_chance']?.toDouble() ?? 0.0,
       avgSpawns: json['avg_spawns']?.toDouble(),
       spawnTime: json['spawn_time'],
-      multipliers: json['multipliers'] != null
-          ? List<double>.from(json['multipliers'])
-          : null,
+      multipliers:
+          json['multipliers'] != null
+              ? List<double>.from(json['multipliers'])
+              : null,
       weaknesses: List<String>.from(json['weaknesses']),
-      nextEvolution: json['next_evolution'] != null
-          ? List<Evolution>.from(
-              json['next_evolution'].map((x) => Evolution.fromJson(x)))
-          : null,
-      prevEvolution: json['prev_evolution'] != null
-          ? List<Evolution>.from(
-              json['prev_evolution'].map((x) => Evolution.fromJson(x)))
-          : null,
+      nextEvolution:
+          json['next_evolution'] != null
+              ? List<Evolution>.from(
+                json['next_evolution'].map((x) => Evolution.fromJson(x)),
+              )
+              : null,
+      prevEvolution:
+          json['prev_evolution'] != null
+              ? List<Evolution>.from(
+                json['prev_evolution'].map((x) => Evolution.fromJson(x)),
+              )
+              : null,
     );
   }
 
@@ -98,22 +103,13 @@ class Evolution {
   final String num;
   final String name;
 
-  Evolution({
-    required this.num,
-    required this.name,
-  });
+  Evolution({required this.num, required this.name});
 
   factory Evolution.fromJson(Map<String, dynamic> json) {
-    return Evolution(
-      num: json['num'],
-      name: json['name'],
-    );
+    return Evolution(num: json['num'], name: json['name']);
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'num': num,
-      'name': name,
-    };
+    return {'num': num, 'name': name};
   }
 }
