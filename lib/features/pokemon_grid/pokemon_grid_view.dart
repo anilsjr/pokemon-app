@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:pokemon_app/data/models/pokemon_model.dart';
 import 'package:pokemon_app/presentation/screens/pokemon_detail_screen.dart';
 import 'package:pokemon_app/core/theme/colors.dart';
+import 'package:pokemon_app/core/utils/responsive_utils.dart';
 
 class PokemonGridView extends StatelessWidget {
   final List<Pokemon> pokemonList;
@@ -17,9 +18,11 @@ class PokemonGridView extends StatelessWidget {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       child: GridView.builder(
-        padding: const EdgeInsets.all(12.0),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+        padding: ResponsiveUtils.responsivePadding(context),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: ResponsiveUtils.responsiveGridCount(
+            context,
+          ), // Responsive grid count
           childAspectRatio: 0.80, // More height for the content
           crossAxisSpacing: 12.0,
           mainAxisSpacing: 12.0,

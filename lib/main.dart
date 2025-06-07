@@ -5,7 +5,6 @@ import 'package:pokemon_app/core/theme/app_theme.dart';
 import 'package:pokemon_app/data/repositories/pokemon_repository.dart';
 import 'package:pokemon_app/presentation/navigation/app_routes.dart';
 import 'package:pokemon_app/presentation/navigation/navigation_service.dart';
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   // Set preferred orientations

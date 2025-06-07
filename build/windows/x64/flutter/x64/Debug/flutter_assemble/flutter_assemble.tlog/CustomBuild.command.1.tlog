@@ -1,0 +1,28 @@
+^D:\ANIL.VISHWAKARMA.DEV\FLUTTER.DEV\POKEMON_APP\BUILD\WINDOWS\X64\CMAKEFILES\3B37105629FA1339635385085BE4C29D\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\flutter PROJECT_DIR=D:\Anil.Vishwakarma.Dev\Flutter.Dev\pokemon_app FLUTTER_ROOT=C:\flutter FLUTTER_EPHEMERAL_DIR=D:\Anil.Vishwakarma.Dev\Flutter.Dev\pokemon_app\windows\flutter\ephemeral PROJECT_DIR=D:\Anil.Vishwakarma.Dev\Flutter.Dev\pokemon_app FLUTTER_TARGET=D:\Anil.Vishwakarma.Dev\Flutter.Dev\pokemon_app\lib\main.dart DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=D:\Anil.Vishwakarma.Dev\Flutter.Dev\pokemon_app\.dart_tool\package_config.json C:/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\ANIL.VISHWAKARMA.DEV\FLUTTER.DEV\POKEMON_APP\BUILD\WINDOWS\X64\CMAKEFILES\8094FE03DD2DE932D141842563CCDA9B\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\ANIL.VISHWAKARMA.DEV\FLUTTER.DEV\POKEMON_APP\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/Anil.Vishwakarma.Dev/Flutter.Dev/pokemon_app/windows -BD:/Anil.Vishwakarma.Dev/Flutter.Dev/pokemon_app/build/windows/x64 --check-stamp-file D:/Anil.Vishwakarma.Dev/Flutter.Dev/pokemon_app/build/windows/x64/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
