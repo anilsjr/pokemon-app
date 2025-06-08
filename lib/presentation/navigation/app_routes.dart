@@ -11,7 +11,7 @@ class AppRoutes {
     switch (settings.name) {
       case AppConstants.splashRoute:
         final repository = settings.arguments as PokemonRepository?;
-        return MaterialPageRoute(
+        return MaterialPageRoute(.config/instructions
           builder:
               (_) => SplashScreen(
                 pokemonRepository: repository ?? PokemonRepository(),

@@ -1,0 +1,196 @@
+{
+   "checksum": "eda3bcb83d26ab5996e5adeef3ccd19b",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13366789586437222",
+            "date_last_used": "0",
+            "guid": "82b6f0c3-8fc9-47db-9a67-e5c3b271277b",
+            "id": "10",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "JDK 22 Documentation - Home",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://docs.oracle.com/en/java/javase/22/index.html",
+            "visit_count": 0
+         }, {
+            "date_added": "13367080079638947",
+            "date_last_used": "0",
+            "guid": "c64644a5-f493-411f-a2c3-67792cbd2a85",
+            "id": "11",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Java - Create and print Person objects",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.w3resource.com/java-exercises/oop/java-oop-exercise-1.php",
+            "visit_count": 0
+         }, {
+            "date_added": "13367080084054174",
+            "date_last_used": "0",
+            "guid": "730827a4-2cf7-4503-922a-641bda0d9edb",
+            "id": "12",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Java Object Oriented Programming - Exercises, Practice, Solution",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.w3resource.com/java-exercises/oop/#google_vignette",
+            "visit_count": 0
+         }, {
+            "date_added": "13367081185195715",
+            "date_last_used": "0",
+            "guid": "b13717d5-ae6e-48c3-bf67-92f5174aa6e4",
+            "id": "13",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Java Object Oriented Programming - Exercises, Practice, Solution",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.w3resource.com/java-exercises/oop/",
+            "visit_count": 0
+         }, {
+            "date_added": "13367089470561042",
+            "date_last_used": "0",
+            "guid": "eae01fee-c3b9-4a80-beca-629139d2329a",
+            "id": "14",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Java - Manage student courses using the Student class",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.w3resource.com/java-exercises/oop/java-oop-exercise-10.php",
+            "visit_count": 0
+         }, {
+            "date_added": "13372191033823897",
+            "date_last_used": "0",
+            "guid": "17b0ac4d-93e7-4f6e-943c-d0d0e49c7c2d",
+            "id": "15",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "500 useful words - Vocabulary List | Vocabulary.com",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.vocabulary.com/lists/340818#:~:text=manpp%20(India)%20Share.%20500%20words%202536%20learners.%20Learn%20words%20with",
+            "visit_count": 1
+         }, {
+            "date_added": "13382361339928400",
+            "date_last_used": "0",
+            "guid": "721e9e93-9c66-4cdf-bda4-30770e293ee7",
+            "id": "16",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "01 - UPDATED Introduction, Overview of Visual Studio, DataTypes And Variables - OneDrive",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://systematixinfotech235-my.sharepoint.com/personal/sandeep_mahajan_softude_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fsandeep%5Fmahajan%5Fsoftude%5Fcom%2FDocuments%2FUdemy%20Courses%2FC%23%2Fcomplete%2Dcsharp%2Dmasterclass%2F01%20%2D%20UPDATED%20Introduction%2C%20Overview%20of%20Visual%20Studio%2C%20DataTypes%20And%20Variables",
+            "visit_count": 1
+         }, {
+            "date_added": "13382386617997074",
+            "date_last_used": "0",
+            "guid": "22e1d24b-a472-435b-bef4-b2cbec460148",
+            "id": "17",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "001 Intro Unity Basics.mp4",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://systematixinfotech235-my.sharepoint.com/personal/sandeep_mahajan_softude_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fsandeep%5Fmahajan%5Fsoftude%5Fcom%2FDocuments%2FUdemy%20Courses%2FC%23%2Fcomplete%2Dcsharp%2Dmasterclass%2F24%20%2D%20UNITY%20%2D%20Basics%2F001%20Intro%20Unity%20Basics%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E7a575fc3%2Db741%2D4ecb%2D996b%2D526976d9f9c1",
+            "visit_count": 1
+         }, {
+            "date_added": "13393830566682393",
+            "date_last_used": "0",
+            "guid": "2c8a4368-1c7e-4879-b1fa-592d3d6f3a54",
+            "id": "9",
+            "name": "Adobe Acrobat Pro DC for Samsung",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "http://www.adobe.com/go/samsung_apdc",
+            "visit_count": 0
+         }, {
+            "date_added": "13393830566682312",
+            "date_last_used": "0",
+            "guid": "57c44af8-c4c3-4f9c-8ca7-306a07c02bed",
+            "id": "8",
+            "name": "Adobe Creative Cloud All Apps for Samsung",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "http://www.adobe.com/go/samsung_cci",
+            "visit_count": 0
+         }, {
+            "date_added": "13393830566682212",
+            "date_last_used": "0",
+            "guid": "7ffa5d39-1ba4-4490-bc0f-3f0ca92fba75",
+            "id": "7",
+            "name": "Adobe Premiere Pro CC for Samsung",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "http://www.adobe.com/go/samsung_ppcc",
+            "visit_count": 0
+         }, {
+            "date_added": "13393830566681855",
+            "date_last_used": "0",
+            "guid": "5724faf5-defe-4e18-8b22-22904439991e",
+            "id": "6",
+            "name": "McAfee LiveSafe - Benefits for Samsung PC users",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://www.mcafee.com/consumer/v/samsung-pc.html",
+            "visit_count": 0
+         } ],
+         "date_added": "13393830566523793",
+         "date_last_used": "0",
+         "date_modified": "13393830566682393",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13393830566523796",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13393830566523797",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CkEKHgiIgQISCHa6yE2XAQAAKg4QABgBIBAoBjAAOABAABIAKhh2Ykl4emhkTFdCLzJsQUJiZlhCY1d3PT1IA6AGDBKtAQgREqgBChxvVHp1cUtUb3Z5Z1M0Zlg4akNiRWsxM2lldFU9EiQyMmUxZDI0Yi1hNDcyLTQzNWItYmVmNC1iMmNiZWM0NjAxNDgYACACKAIwxqa17vQyONmVwZ3KMkDBg7Xu9DJKHHVDNHNzT1VOWFBCVnh5Wm1rMFc3MnRaVXlIaz1aHyId+ktiMlVVNVB0OW9PYzdjTFBESHhLMDU3TUpPRT1lmWmqK8I+AmAFEq0BCBASqAEKHFhnVXVJRUIwcXJWblRIdE1zekR6ZCtFTnZMVT0SJDcyMWU5ZTkzLTljNjYtNGNkZi1iZGE0LTMwNzcwZTI5M2VlNxgAIAIoAjDFprXu9DI49KC6kcoyQL6Dte70MkocVjNKbEpxY1FTYVd2K2FTWkRKQlZnREpJdkg4PVofIh30bFAvcmFjbGwvZWQ4d3dSVmM5Z05ZV1FJbVFzPWUA6hNMwj4CYAUSrQEIDxKoAQocMEY4UE4xN3llMVMwZWluc25CeS82TkJvb1hJPRIkMTdiMGFjNGQtOTNlNy00ZjZlLTk0M2MtZDBkMGU0OWM3YzJkGAAgAigCMMOmte70MjiN3e+fpDJAvYO17vQyShxHblVQMjJpYlpzZXN6dkFTMlpkbmhyNGhoZms9Wh8iHelQRURGMkJ0ZVN4NDhQNDltbHJLYXJUU3FKZVU9ZXH9AIfCPgJgBRKsAQgLEqcBChw4RmNhYUs4NmFTRDdlQ3Vxd1ZjUU9qUWNnN0k9EiRjNjQ2NDRhNS1mNDkzLTQxMWYtYTJjMy02Nzc5MmNiZDJhODUYACACKAIwxKa17vQyOMiWpfORMkC8g7Xu9DJKHHVnVE80SlNSWERzZk5RUWNSdmQzdWtEaXJlND1aHiIcSWY2TWdGK1FRODUvZzNjM3RiZndLLytjeW5NPWXDocIrwj4CYAUSrQEIDhKoAQocWG1kSllyb3VpUUV0S0M5Vm9kb1EwT3E2dnBFPRIkZWFlMDFmZWUtYzNiOS00YTgwLWJlY2EtNjI5MTM5ZDIzMjlhGAAgAigCMMKmte70MjjzlaXzkTJAvYO17vQyShxhaFIyekhGbHdqaC82ZFc5elRyTkJ6a2ZiTG89Wh8iHdJCZHlpUmthSUFJOVlET3V6QTdRaXBQWVVCME09ZcOhwivCPgJgBRKsAQgKEqcBChxub3owbTh1bVJrZ2xyUjQ4bCtCeVdvR3VwQm89EiQ4MmI2ZjBjMy04ZmM5LTQ3ZGItOWE2Ny1lNWMzYjI3MTI3N2IYACACKAIwwaa17vQyONqVpfORMkC8g7Xu9DJKHFIwTHhUdS9lS2w4NWkyRVRYcDk1b09KdGxkND1aHiIcRVcvT0NmQ2FBZHlHaVF6NjlQek5HamxXcGxNPWU5A0Agwj4CYAUSrQEIDRKoAQocVjBpbEw2cHVhR045RkVSemdtRVZxaFVJdHJBPRIkYjEzNzE3ZDUtYWU2ZS00OGMzLWJmNjctOTJmNTE3NGFhNmU0GAAgAigCMMCmte70MjivlqXzkTJAvYO17vQyShw3bnh3ZFlXdFNSOVlXTjBRRjh1bmRqbHN2dVU9Wh8iHaQ0bE9lcWxvWTM0a3BZZDA3NnloUFQ0Q2dmOVU9ZcOhwivCPgJgBRKOAQgBEokBChx5eEovNmZ2a2VjcjdrcDVFUXpCNHRXTHBkYkU9EiRiZGVhNzlhMi1hNDIwLTVhMDgtYjNkMS0zMjE4YThkZDk5ZGIYACAAKAAw28PL+Y4yOILMy/mOMkCCzMv5jjJKHGFSQ1dMZ2hGOWI1SW5xS0lEdnVKL2p2UWtGYz1aAGUAAAAAwj4CYAASrAEIDBKnAQocMWJOZ2lLNHZCZEFwRTdQSlgvNDNYalI1ZEZ3PRIkNzMwODI3YTQtMmNmNy00NTAzLTkyMmEtNjQxYmRhMGQ5ZWRiGAAgAigCML+mte70MjiXlqXzkTJAvIO17vQyShwrcjlSbXRtUENhWm91Vkd3cHIyNlUyMnBsRmM9Wh4iHElvRXFra3VZTTBYYjlXd0xtTkdadkR0aXZuYz1lw6HCK8I+AmAFEo4BCAISiQEKHFljU1RvbnZFU1B3cUNzNEwyY3JWaHY2OEw5OD0SJDcyN2RiM2NmLWRiYjMtNWU3YS05Y2UxLWMyYjRlZmFmYWEzNxgAIAAoADDcw8v5jjI4oszL+Y4yQKLMy/mOMkocb1BWa2h3QlJiVjY1S0NXUjIrSU9OSFdvT3U4PVoAZQAAAADCPgJgABKOAQgDEokBChxuamdEdTg4ZUNydlhwODZwRDdmSEdjcUZwODg9EiQ5ZmYwMjE3OS03ZDgxLTVlYzAtYjUyZC04MGMyYWNlMmQ0OWMYACAAKAAw4cPL+Y4yOPvMy/mOMkD7zMv5jjJKHHl6TkIwMWNuNTRBN2NSVTB1VCsvUGdtVHRVbz1aAGUAAAAAwj4CYAAwADgA",
+   "version": 1
+}

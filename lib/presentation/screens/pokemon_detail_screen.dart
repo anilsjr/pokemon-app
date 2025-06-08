@@ -18,7 +18,7 @@ class PokemonDetailScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: PokemonTypeColor.getColor(
         pokemon.type.first,
-      ).withOpacity(0.8),
+      ).withOpacity(1),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -103,6 +103,8 @@ class PokemonDetailScreen extends StatelessWidget {
                             tag: 'pokemon-${pokemon.id}',
                             child: CachedNetworkImage(
                               imageUrl: pokemon.img,
+                              // height: 150,
+                              // width: 300,
                               fit: BoxFit.contain,
                               placeholder:
                                   (context, url) => const Center(
