@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 /// A utility class for responsive design
 class ResponsiveUtils {
   /// Screen sizes
-  static const double mobileBreakpoint = 600;
-  static const double tabletBreakpoint = 900;
-  static const double desktopBreakpoint = 1200;
+  static const double mobileBreakpoint = 500;
+  static const double tabletBreakpoint = 800;
+  static const double desktopBreakpoint = 1024;
 
   /// Returns true if the screen width is less than the mobile breakpoint
   static bool isMobile(BuildContext context) {
@@ -48,6 +48,15 @@ class ResponsiveUtils {
       mobile: const EdgeInsets.all(16.0),
       tablet: const EdgeInsets.all(24.0),
       desktop: const EdgeInsets.all(32.0),
+    );
+  }
+
+  static EdgeInsets responsiveHorizontalPadding(BuildContext context) {
+    return responsiveValue(
+      context: context,
+      mobile: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
+      tablet: const EdgeInsets.symmetric(horizontal: 50.0),
+      desktop: const EdgeInsets.symmetric(horizontal: 100.0),
     );
   }
 

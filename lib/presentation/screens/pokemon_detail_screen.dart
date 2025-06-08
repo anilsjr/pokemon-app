@@ -6,6 +6,8 @@ import 'package:pokemon_app/core/theme/colors.dart';
 import 'package:pokemon_app/presentation/widgets/type_badge.dart';
 import 'package:pokemon_app/presentation/widgets/stat_bar.dart';
 import 'package:pokemon_app/core/utils/pokemon_type_colors.dart';
+import 'package:pokemon_app/core/utils/responsive_utils.dart';
+import 'package:pokemon_app/data/repositories/pokemon_repository.dart';
 
 class PokemonDetailScreen extends StatelessWidget {
   final Pokemon pokemon;
@@ -31,39 +33,126 @@ class PokemonDetailScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Stack(
-        children: [
-          // Background circles
-          Positioned(
-            top: -50,
-            right: -50,
-            child: Container(
-              width: 200,
-              height: 200,
-              decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.1),
-                shape: BoxShape.circle,
+      body: Container(
+        padding: ResponsiveUtils.responsiveHorizontalPadding(context),
+        child: Stack(
+          children: [
+            // Background circles
+            Positioned(
+              top: -50,
+              right: -50,
+              child: Container(
+                width: 200,
+                height: 200,
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.1),
+                  shape: BoxShape.circle,
+                ),
               ),
             ),
-          ),
-          // Content
-          Column(
-            children: [
-              // Pokemon image and basic info
-              Expanded(
-                flex: 3,
-                child: Padding(
-                  padding: const EdgeInsets.all(24.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Name and number
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+            // Content
+            Column(
+              children: [
+                // Pokemon image and basic info
+                ResponsiveUtils.isMobile(context)
+                    ? Expanded(
+                      flex: 3,
+                      child: Padding(
+                        padding: const EdgeInsets.all(24.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // Name and number
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        pokemon.name,
+                                        style: const TextStyle(
+                                          fontSize: 32,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      Text(
+                                        '#${pokemon.num}',
+                                        style: const TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white70,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+
+                            // Types
+                            const SizedBox(height: 5),
+                            Wrap(
+                              spacing: 8,
+                              children:
+                                  pokemon.type
+                                      .map((type) => TypeBadge(type: type))
+                                      .toList(),
+                            ),
+                            const SizedBox(height: 5),
+                            // Image
+                            Expanded(
+                              child: Center(
+                                child: Hero(
+                                  tag: 'pokemon-${pokemon.id}',
+                                  child: Container(
+                                    height: 300,
+                                    width: 300,
+                                    // color: Colors.red,
+                                    child: CachedNetworkImage(
+                                      imageUrl: pokemon.img,
+                                      fit: BoxFit.contain,
+                                      placeholder:
+                                          (context, url) => const Center(
+                                            child: CircularProgressIndicator(
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                      errorWidget:
+                                          (context, url, error) => const Icon(
+                                            Icons.broken_image,
+                                            size: 100,
+                                            color: Colors.white70,
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                    : Container(
+                      height: 190,
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(horizontal: 0.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
+                          // Pokemon image
+
+                          // Pokemon name and number
                           Expanded(
+                            flex: 1,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
                                   pokemon.name,
@@ -81,105 +170,104 @@ class PokemonDetailScreen extends StatelessWidget {
                                     color: Colors.white70,
                                   ),
                                 ),
+                                Wrap(
+                                  direction: Axis.horizontal,
+                                  spacing: 4,
+                                  children:
+                                      pokemon.type
+                                          .map((type) => TypeBadge(type: type))
+                                          .toList(),
+                                ),
                               ],
                             ),
                           ),
-                        ],
-                      ),
-                      // Types
-                      const SizedBox(height: 8),
-                      Wrap(
-                        spacing: 8,
-                        children:
-                            pokemon.type
-                                .map((type) => TypeBadge(type: type))
-                                .toList(),
-                      ),
-                      const SizedBox(height: 16),
-                      // Image
-                      Expanded(
-                        child: Center(
-                          child: Hero(
-                            tag: 'pokemon-${pokemon.id}',
-                            child: CachedNetworkImage(
-                              imageUrl: pokemon.img,
-                              // height: 150,
-                              // width: 300,
-                              fit: BoxFit.contain,
-                              placeholder:
-                                  (context, url) => const Center(
-                                    child: CircularProgressIndicator(
-                                      color: Colors.white,
+
+                          Expanded(
+                            flex: 1,
+                            child: Hero(
+                              tag: 'pokemon-${pokemon.id}',
+                              child: CachedNetworkImage(
+                                imageUrl: pokemon.img,
+                                fit: BoxFit.contain,
+                                placeholder:
+                                    (context, url) => const Center(
+                                      child: CircularProgressIndicator(
+                                        color: Colors.white,
+                                      ),
                                     ),
-                                  ),
-                              errorWidget:
-                                  (context, url, error) => const Icon(
-                                    Icons.broken_image,
-                                    size: 100,
-                                    color: Colors.white70,
-                                  ),
+                                errorWidget:
+                                    (context, url, error) => const Icon(
+                                      Icons.broken_image,
+                                      size: 100,
+                                      color: Colors.white70,
+                                    ),
+                              ),
                             ),
                           ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              // Pokemon detailed info
-              Expanded(
-                flex: 4,
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(24.0),
-                  decoration: const BoxDecoration(
-                    color: AppColors.backgroundCard,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                    ),
-                  ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // Physical attributes
-                        _buildSectionTitle('About'),
-                        _buildPhysicalAttributes(),
-                        const SizedBox(height: 24),
 
-                        // Base stats
-                        _buildSectionTitle('Base Stats'),
-                        _buildStats(),
-                        const SizedBox(height: 24),
-
-                        // Weaknesses
-                        _buildSectionTitle('Weaknesses'),
-                        Wrap(
-                          spacing: 8,
-                          runSpacing: 8,
-                          children:
-                              pokemon.weaknesses
-                                  .map((type) => TypeBadge(type: type))
-                                  .toList(),
-                        ),
-                        const SizedBox(height: 24),
-
-                        // Evolution
-                        if (pokemon.nextEvolution != null ||
-                            pokemon.prevEvolution != null) ...[
-                          _buildSectionTitle('Evolution Chain'),
-                          _buildEvolutionChain(),
-                          const SizedBox(height: 24),
+                          const Expanded(flex: 1, child: SizedBox()),
                         ],
-                      ],
+                      ),
+                    ),
+
+                SizedBox(height: ResponsiveUtils.isMobile(context) ? 0 : 24),
+
+                // Pokemon detailed info
+                Expanded(
+                  flex: 4,
+                  child: Container(
+                    width: double.infinity,
+                    margin: const EdgeInsets.only(top: 24.0),
+                    padding: const EdgeInsets.all(24.0),
+                    decoration: const BoxDecoration(
+                      color: AppColors.backgroundCard,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30),
+                      ),
+                    ),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // Physical attributes
+                          _buildSectionTitle('About'),
+                          _buildPhysicalAttributes(),
+                          const SizedBox(height: 24),
+
+                          // Base stats
+                          _buildSectionTitle('Base Stats'),
+                          _buildStats(),
+                          const SizedBox(height: 24),
+
+                          // Weaknesses
+                          _buildSectionTitle('Weaknesses'),
+                          Wrap(
+                            spacing: 8,
+                            runSpacing: 8,
+                            children:
+                                pokemon.weaknesses
+                                    .map((type) => TypeBadge(type: type))
+                                    .toList(),
+                          ),
+                          const SizedBox(height: 24),
+
+                          // Evolution
+                          if (pokemon.nextEvolution != null ||
+                              pokemon.prevEvolution != null) ...[
+                            _buildSectionTitle('Evolution Chain'),
+                            _buildEvolutionChain(context),
+                            const SizedBox(height: 24),
+                          ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -261,8 +349,9 @@ class PokemonDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildEvolutionChain() {
+  Widget _buildEvolutionChain(BuildContext context) {
     List<Widget> evolutionWidgets = [];
+    final PokemonRepository pokemonRepository = PokemonRepository();
 
     // Previous evolutions
     if (pokemon.prevEvolution != null) {
@@ -338,24 +427,39 @@ class PokemonDetailScreen extends StatelessWidget {
       for (var i = 0; i < pokemon.nextEvolution!.length; i++) {
         var evolution = pokemon.nextEvolution![i];
         evolutionWidgets.add(
-          Column(
-            children: [
-              Text(
-                evolution.name,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.textPrimary,
+          GestureDetector(
+            onTap: () async {
+              // Fetch the full Pokemon object by num
+              final nextPokemon = await pokemonRepository.getPokemonList();
+              final found = nextPokemon.firstWhere(
+                (p) => p.num == evolution.num,
+                orElse: () => pokemon,
+              );
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => PokemonDetailScreen(pokemon: found),
                 ),
-              ),
-              Text(
-                '#${evolution.num}',
-                style: const TextStyle(
-                  fontSize: 14,
-                  color: AppColors.textSecondary,
+              );
+            },
+            child: Column(
+              children: [
+                Text(
+                  evolution.name,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.textPrimary,
+                  ),
                 ),
-              ),
-            ],
+                Text(
+                  '#${evolution.num}',
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: AppColors.textSecondary,
+                  ),
+                ),
+              ],
+            ),
           ),
         );
         if (i < pokemon.nextEvolution!.length - 1) {

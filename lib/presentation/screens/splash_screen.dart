@@ -26,14 +26,14 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _loadData() async {
     try {
-      // Preload Pokemon data
-      final pokemonList = await widget.pokemonRepository.getPokemonList();
-
-      // Wait for minimum splash screen time and then navigate
-      await Future.wait([
+      // Wait for both Pokemon data and splash duration in parallel
+      final results = await Future.wait([
         widget.pokemonRepository.getPokemonList(),
-        Future.delayed(const Duration(milliseconds: AppConstants.splashDuration)),
+        Future.delayed(
+          const Duration(milliseconds: AppConstants.splashDuration),
+        ),
       ]);
+      final pokemonList = results[0];
 
       if (mounted) {
         Navigator.of(context).pushReplacement(
@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             // Pokemon logo or app title
             const Text(
-              'Pokemon App',
+              AppConstants.appTitle,
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 40),
@@ -101,6 +101,14 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                 ],
               ),
+            Text(
+              AppConstants.appSubtitle,
+              style: TextStyle(
+                fontSize: 16,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
+              textAlign: TextAlign.center,
+            ),
           ],
         ),
       ),

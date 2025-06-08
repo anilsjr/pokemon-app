@@ -19,4 +19,8 @@ class AppConstants {
   // Error messages
   static const String fetchErrorMessage = 'Failed to load Pokemon data';
   static const String networkErrorMessage = 'Please check your connection.';
+
+  //App title
+  static const String appTitle = 'Pokemon App';
+  static const String appSubtitle = 'Discover your favorite Pokemon!';
 }
