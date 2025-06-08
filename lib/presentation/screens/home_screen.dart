@@ -3,6 +3,8 @@ import 'package:pokemon_app/data/models/pokemon_model.dart';
 import 'package:pokemon_app/features/pokemon_list/pokemon_list_view.dart';
 import 'package:pokemon_app/features/pokemon_grid/pokemon_grid_view.dart';
 import 'package:pokemon_app/features/pokemon_cards/pokemon_cards_view.dart';
+import 'package:pokemon_app/presentation/screens/pokemon_detail_screen.dart'
+    show PokemonDetailScreen;
 
 class HomeScreen extends StatefulWidget {
   final List<Pokemon> pokemonList;
@@ -145,10 +147,14 @@ class _PokemonSearchDelegate extends SearchDelegate<Pokemon?> {
           ),
           title: Text(pokemon.name),
           subtitle: Text('#${pokemon.num}'),
-          onTap: () {
-            close(context, pokemon);
-            // Navigate to detail screen
-          },
+          onTap:
+              () => {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => PokemonDetailScreen(pokemon: pokemon),
+                  ),
+                ),
+              },
         );
       },
     );

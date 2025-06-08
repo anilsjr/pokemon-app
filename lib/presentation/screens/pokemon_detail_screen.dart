@@ -34,6 +34,17 @@ class PokemonDetailScreen extends StatelessWidget {
         ],
       ),
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/pattern_bg.jpg'),
+            opacity: 0.05,
+            fit: BoxFit.cover,
+            // colorFilter: ColorFilter.mode(
+            //   Colors.black.withOpacity(0.1),
+            //   BlendMode.darken,
+            // ),
+          ),
+        ),
         padding: ResponsiveUtils.responsiveHorizontalPadding(context),
         child: Stack(
           children: [
