@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -32,57 +33,66 @@ class _PokemonCardsViewState extends State<PokemonCardsView> {
             .map((pokemon) => _buildPokemonCard(context, pokemon))
             .toList();
 
-    return Container(
-      decoration: const BoxDecoration(color: AppColors.backgroundDark),
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      child: Column(
-        children: [
-          Expanded(
-            child: CardSwiper(
-              controller: _cardSwiperController,
-              cardsCount: cards.length,
-              cardBuilder:
-                  (context, index, percentThresholdX, percentThresholdY) =>
-                      cards[index],
-              allowedSwipeDirection: const AllowedSwipeDirection.symmetric(
-                horizontal: true,
+    return Center(
+      child: Container(
+        decoration: const BoxDecoration(color: AppColors.backgroundDark),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          children: [
+            Container(
+              width: math.min<double>(
+                600,
+                MediaQuery.of(context).size.width * 0.9,
               ),
-              onSwipe: (previousIndex, currentIndex, direction) {
-                return true;
-              },
-              numberOfCardsDisplayed: 3,
-              backCardOffset: const Offset(20, 20),
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            ),
-          ),
-          // Controls
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                IconButton(
-                  icon: const Icon(
-                    Icons.arrow_back_rounded,
-                    color: AppColors.textPrimary,
-                  ),
-                  onPressed: () => _cardSwiperController.undo(),
+
+              height: MediaQuery.of(context).size.height * 0.65,
+              child: CardSwiper(
+                controller: _cardSwiperController,
+                cardsCount: cards.length,
+                cardBuilder:
+                    (context, index, percentThresholdX, percentThresholdY) =>
+                        cards[index],
+                allowedSwipeDirection: const AllowedSwipeDirection.symmetric(
+                  horizontal: true,
                 ),
-                // const SizedBox(width: 50.0),
-                IconButton(
-                  icon: const Icon(
-                    Icons.arrow_forward_rounded,
-                    color: AppColors.textPrimary,
-                  ),
-                  onPressed:
-                      () =>
-                          _cardSwiperController.swipe(CardSwiperDirection.left),
-                ),
-              ],
+                onSwipe: (previousIndex, currentIndex, direction) {
+                  return true;
+                },
+                numberOfCardsDisplayed: 3,
+                backCardOffset: const Offset(20, 20),
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              ),
             ),
-          ),
-        ],
+            // Controls
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  IconButton(
+                    icon: const Icon(
+                      Icons.arrow_back_rounded,
+                      color: AppColors.textPrimary,
+                    ),
+                    onPressed: () => _cardSwiperController.undo(),
+                  ),
+                  // const SizedBox(width: 50.0),
+                  IconButton(
+                    icon: const Icon(
+                      Icons.arrow_forward_rounded,
+                      color: AppColors.textPrimary,
+                    ),
+                    onPressed:
+                        () => _cardSwiperController.swipe(
+                          CardSwiperDirection.left,
+                        ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -157,8 +167,8 @@ class _PokemonCardsViewState extends State<PokemonCardsView> {
                   child: CachedNetworkImage(
                     imageUrl: pokemon.img,
                     fit: BoxFit.contain,
-                    height: 150,
-                    width: 150,
+                    height: 160,
+                    width: 160,
                     placeholder:
                         (context, url) => const Center(
                           child: CircularProgressIndicator(color: Colors.white),
