@@ -106,13 +106,10 @@ class _PokemonCardsViewState extends State<PokemonCardsView> {
             gradient: PokemonTypeColor.getGradient(pokemon.type),
             borderRadius: BorderRadius.circular(20),
             image: DecorationImage(
-              image: AssetImage('assets/pattern_bg.jpg'),
-              opacity: 0.05,
-              fit: BoxFit.cover,
-              // colorFilter: ColorFilter.mode(
-              //   Colors.black.withOpacity(0.1),
-              //   BlendMode.darken,
-              // ),
+              image: AssetImage('assets/logo.png'),
+              opacity: 0.1,
+              fit: BoxFit.contain,
+              alignment: Alignment.center,
             ),
           ),
           child: Column(
