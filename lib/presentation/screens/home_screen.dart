@@ -64,6 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
           highlightColor: Colors.transparent,
         ),
         child: BottomNavigationBar(
+          backgroundColor: Theme.of(context).primaryColor,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white30,
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
