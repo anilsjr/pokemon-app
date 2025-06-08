@@ -30,9 +30,10 @@ class _SplashScreenState extends State<SplashScreen> {
       final pokemonList = await widget.pokemonRepository.getPokemonList();
 
       // Wait for minimum splash screen time and then navigate
-      await Future.delayed(
-        const Duration(milliseconds: AppConstants.splashDuration),
-      );
+      await Future.wait([
+        widget.pokemonRepository.getPokemonList(),
+        Future.delayed(const Duration(milliseconds: AppConstants.splashDuration)),
+      ]);
 
       if (mounted) {
         Navigator.of(context).pushReplacement(
