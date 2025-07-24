@@ -6,6 +6,14 @@ A Pokemon information app built with Flutter and organized according to industry
 
 This app follows a clean, layered architecture to promote separation of concerns, testability, and maintainability.
 
+## Demo
+<video width="100%" controls>
+  <source src="showcases/pokemon_app.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+
 ### Layer Structure
 
 - **Core Layer**: Contains application-wide utilities, constants, and theme definitions
